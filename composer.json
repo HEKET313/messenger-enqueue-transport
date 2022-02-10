@@ -22,7 +22,8 @@
         "enqueue/amqp-tools": "^0.10"
     },
     "replace": {
-        "enqueue/messenger-adapter": ">0.2.2"
+        "enqueue/messenger-adapter": ">0.2.2",
+        "sroze/messenger-enqueue-transport": "*"
     },
     "autoload": {
         "psr-4": { "Enqueue\\MessengerAdapter\\": "" },
