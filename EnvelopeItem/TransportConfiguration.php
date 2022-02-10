@@ -27,10 +27,13 @@ final class TransportConfiguration implements StampInterface, \Serializable
 
     private $metadata = array();
 
+    private $topicMetadata = array();
+
     public function __construct(array $configuration = array())
     {
         $this->topic = $configuration['topic'] ?? null;
         $this->metadata = $configuration['metadata'] ?? array();
+        $this->topicMetadata = $configuration['topic_metadata'] ?? array();
     }
 
     /**
@@ -39,6 +42,16 @@ final class TransportConfiguration implements StampInterface, \Serializable
     public function getTopic(): ?string
     {
         return $this->topic;
+    }
+
+    public function getTopicMetadata(): array
+    {
+        return $this->topicMetadata;
+    }
+
+    public function hasTopicMetadata(): bool
+    {
+        return \count($this->topicMetadata) > 0;
     }
 
     /**
@@ -115,7 +128,8 @@ final class TransportConfiguration implements StampInterface, \Serializable
         return array(
             'topic' => $this->topic,
             'metadata' => $this->metadata,
-        );
+            'topic_metadata' => $this->topicMetadata,
+        ));
     }
 
     public function __unserialize(array $data): void
