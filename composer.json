@@ -1,5 +1,5 @@
 {
-    "name": "niklesh/messenger-enqueue-transport",
+    "name": "sroze/messenger-enqueue-transport",
     "type": "symfony-bundle",
     "description": "Enqueue adapter for Symfony Messenger component",
     "keywords": ["symfony", "messenger", "enqueue"],
@@ -22,8 +22,7 @@
         "enqueue/amqp-tools": "^0.10"
     },
     "replace": {
-        "enqueue/messenger-adapter": ">0.2.2",
-        "sroze/messenger-enqueue-transport": "*"
+        "enqueue/messenger-adapter": ">0.2.2"
     },
     "autoload": {
         "psr-4": { "Enqueue\\MessengerAdapter\\": "" },
